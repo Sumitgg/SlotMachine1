@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,23 +19,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7zt-tj-PS4">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="162"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slot-machine-2304135_960_720" translatesAutoresizingMaskIntoConstraints="NO" id="zLA-Ba-aTb">
+                                <rect key="frame" x="-136" y="-70" width="646" height="655"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="162" id="aL3-C7-pB1"/>
+                                    <constraint firstAttribute="width" constant="646" id="Wnv-jG-h1w"/>
                                 </constraints>
+                            </imageView>
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7zt-tj-PS4">
+                                <rect key="frame" x="96" y="176" width="183" height="162"/>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g39-zD-BJs">
-                                <rect key="frame" x="0.0" y="417" width="375" height="36"/>
+                                <rect key="frame" x="0.0" y="33" width="375" height="36"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="34t-IV-cUb"/>
+                                    <constraint firstAttribute="height" constant="36" id="LRo-P0-eR1"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dlp-ZB-Ytw">
-                                <rect key="frame" x="131" y="242" width="112" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dlp-ZB-Ytw">
+                                <rect key="frame" x="326" y="150" width="49" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="buttonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VcI-6s-lH0"/>
@@ -43,15 +48,14 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="g39-zD-BJs" secondAttribute="bottom" constant="214" id="1cT-rV-GlK"/>
-                            <constraint firstItem="Dlp-ZB-Ytw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="131" id="FZi-sz-4aP"/>
-                            <constraint firstItem="7zt-tj-PS4" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Ftg-hs-ucu"/>
-                            <constraint firstAttribute="trailing" secondItem="7zt-tj-PS4" secondAttribute="trailing" id="J4T-nr-t0x"/>
-                            <constraint firstItem="Dlp-ZB-Ytw" firstAttribute="top" secondItem="7zt-tj-PS4" secondAttribute="bottom" constant="80" id="UjY-xq-WrJ"/>
-                            <constraint firstItem="7zt-tj-PS4" firstAttribute="trailing" secondItem="g39-zD-BJs" secondAttribute="trailing" id="bLw-Xa-Hqn"/>
-                            <constraint firstItem="7zt-tj-PS4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cNG-mz-vTA"/>
-                            <constraint firstItem="7zt-tj-PS4" firstAttribute="leading" secondItem="g39-zD-BJs" secondAttribute="leading" id="o0R-nz-BWA"/>
-                            <constraint firstItem="Dlp-ZB-Ytw" firstAttribute="centerX" secondItem="g39-zD-BJs" secondAttribute="centerX" id="ok6-eh-JbY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zLA-Ba-aTb" secondAttribute="bottom" constant="82" id="62V-xn-hv9"/>
+                            <constraint firstItem="g39-zD-BJs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9pG-la-nd5"/>
+                            <constraint firstItem="zLA-Ba-aTb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="K6r-Yk-sDd"/>
+                            <constraint firstItem="zLA-Ba-aTb" firstAttribute="centerX" secondItem="g39-zD-BJs" secondAttribute="centerX" id="P8w-Mn-hJV"/>
+                            <constraint firstItem="zLA-Ba-aTb" firstAttribute="centerX" secondItem="7zt-tj-PS4" secondAttribute="centerX" id="fgQ-Ux-AHa"/>
+                            <constraint firstItem="zLA-Ba-aTb" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-90" id="poC-XS-ILE"/>
+                            <constraint firstItem="zLA-Ba-aTb" firstAttribute="centerY" secondItem="7zt-tj-PS4" secondAttribute="centerY" id="rTR-uO-6ty"/>
+                            <constraint firstItem="g39-zD-BJs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="13" id="wzc-Go-beo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -65,4 +69,7 @@
             <point key="canvasLocation" x="-79.200000000000003" y="133.5832083958021"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="slot-machine-2304135_960_720" width="707" height="720"/>
+    </resources>
 </document>
