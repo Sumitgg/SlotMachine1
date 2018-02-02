@@ -7,81 +7,108 @@
 //
 
 import UIKit
-
+extension String {
+    func emojiToImage() -> UIImage? {
+        let size = CGSize(width: 30, height: 35)
+        UIGraphicsBeginImageContextWithOptions(size, false, 0)
+        UIColor.white.set()
+        let rect = CGRect(origin: CGPoint(), size: size)
+        UIRectFill(CGRect(origin: CGPoint(), size: size))
+        (self as NSString).draw(in: rect, withAttributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 30)])
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
+    }
+}
 class ViewController: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSource{
 
+    @IBOutlet weak var winMoney: UILabel!
+    @IBOutlet weak var ownMoney: UILabel!
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var resultLabel: UILabel!
-    var imageArray = [String]()
-    var dataArray1 = [Int]()
-    var dataArray2 = [Int]()
-    var dataArray3 = [Int]()
+    var imageArray:[UIImage]!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        imageArray = ["🍎","😍","🐮","🐼","🐔","🎅","🚍","💖","👑","👻"]
-        for _ in 1...100 {
-            dataArray1.append((Int)(arc4random() % 10))
-            dataArray2.append((Int)(arc4random() % 10))
-            dataArray3.append((Int)(arc4random() % 10))
-        }
-        
+        imageArray = ["🍎".emojiToImage()!,
+                      "😍".emojiToImage()!,
+                      "🐮".emojiToImage()!,
+                      "🐼".emojiToImage()!,
+                      "🐔".emojiToImage()!,
+                      "🎅".emojiToImage()!,
+                      "🚍".emojiToImage()!,
+                      "💖".emojiToImage()!,
+                      "👑".emojiToImage()!,
+                      "👻".emojiToImage()!]
+
         resultLabel.text = ""
-        
+        winMoney.text = "0"
+        ownMoney.text = "5000"
+      
+        arc4random_stir()
         pickerView.delegate = self
         pickerView.dataSource = self
     }
-    @IBAction func buttonClicked(_ sender: Any) {
-        pickerView.selectRow(Int(arc4random())%94 + 3, inComponent: 0, animated: true)
-        pickerView.selectRow(Int(arc4random())%94 + 3, inComponent: 1, animated: true)
-        pickerView.selectRow(Int(arc4random())%94 + 3, inComponent: 2, animated: true)
+    @IBAction func buttonClicked(_ sender: UIButton) {
+        var win = false
+        var numInRow = -1
+        var lastVal = -1
+        var winnedMoney = Int(winMoney.text!)!
+        var ownnedMoney = Int(ownMoney.text!)!
+        if ownnedMoney>0{
+        for i in 0..<5{
+            let newValue = Int(arc4random_uniform(UInt32(imageArray.count)))
+            if newValue == lastVal{
+            numInRow += 1
+        }else {
+            numInRow = 1
+        }
+        lastVal = newValue
         
-        if(dataArray1[pickerView.selectedRow(inComponent: 0)] == dataArray2[pickerView.selectedRow(inComponent: 1)] &&
-            dataArray2[pickerView.selectedRow(inComponent: 1)] == dataArray3[pickerView.selectedRow(inComponent: 2)]) {
-            
-            resultLabel.text = "Bingo!!";
-        } else {
-            resultLabel.text = ""
+            pickerView.selectRow(newValue, inComponent: i, animated: true)
+            pickerView.reloadComponent(i)
+            ownnedMoney = ownnedMoney - 40
+            ownMoney.text = String(ownnedMoney)
+            if numInRow >= 3{
+                winnedMoney = winnedMoney + 1000
+                ownnedMoney = ownnedMoney + 1000
+                winMoney.text = String(winnedMoney)
+                ownMoney.text = String(ownnedMoney)
+                win = true
+            }
+    }
+        resultLabel.text = win ? "WINNER" : ""
+        if ownnedMoney == 0{
+            resultLabel.text = "You Lose!"
         }
     }
-    
+    }
     // returns the number of 'columns' to display.
     @available(iOS 2.0, *)
     public func numberOfComponents(in pickerView: UIPickerView) -> Int{
-        return	100
+        return	5
     }
     
     
     // returns the # of rows in each component..
     @available(iOS 2.0, *)
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
-        return 3
+        return imageArray.count
     }
 
     func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
-        return 100.0
+        return 32
     }
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat{
-        return 100.0
+        return 32
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        
-        let pickerLabel = UILabel()
-        
-        if component == 0 {
-            pickerLabel.text = imageArray[(Int)(dataArray1[row])]
-        } else if component == 1 {
-            pickerLabel.text = imageArray[(Int)(dataArray2[row])]
-        } else {
-            pickerLabel.text = imageArray[(Int)(dataArray3[row])]
-        }
-        
-        pickerLabel.font = UIFont(name: "Arial-BoldMT", size: 80)
-        pickerLabel.textAlignment = NSTextAlignment.center
-        
-        return pickerLabel
+        let image = imageArray[row]
+        let imageView = UIImageView(image: image)
+        return imageView
     }
     
 

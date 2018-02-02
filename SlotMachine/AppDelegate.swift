@@ -15,6 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        for family in UIFont.familyNames as [String] {
+            print(family)
+            for font in UIFont.fontNames(forFamilyName: family) {
+                print("\t\(font)")
+            } }
         // Override point for customization after application launch.
         return true
     }
