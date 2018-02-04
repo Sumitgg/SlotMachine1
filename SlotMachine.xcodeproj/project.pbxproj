@@ -14,7 +14,6 @@
 		A7A0FB58201EED0A0055833B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7A0FB56201EED0A0055833B /* LaunchScreen.storyboard */; };
 		A7A0FB63201EED0A0055833B /* SlotMachineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A0FB62201EED0A0055833B /* SlotMachineTests.swift */; };
 		A7A0FB6E201EED0A0055833B /* SlotMachineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A0FB6D201EED0A0055833B /* SlotMachineUITests.swift */; };
-		A7A0FBB820250F680055833B /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = A7A0FBB720250F680055833B /* background.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +47,6 @@
 		A7A0FB69201EED0A0055833B /* SlotMachineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlotMachineUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7A0FB6D201EED0A0055833B /* SlotMachineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotMachineUITests.swift; sourceTree = "<group>"; };
 		A7A0FB6F201EED0A0055833B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A7A0FBB720250F680055833B /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = ../../../Downloads/background.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +100,6 @@
 				A7A0FB4D201EED0A0055833B /* AppDelegate.swift */,
 				A7A0FB4F201EED0A0055833B /* ViewController.swift */,
 				A7A0FB51201EED0A0055833B /* Main.storyboard */,
-				A7A0FBB720250F680055833B /* background.png */,
 				A7A0FB54201EED0A0055833B /* Assets.xcassets */,
 				A7A0FB56201EED0A0055833B /* LaunchScreen.storyboard */,
 				A7A0FB59201EED0A0055833B /* Info.plist */,
@@ -236,7 +233,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7A0FB58201EED0A0055833B /* LaunchScreen.storyboard in Resources */,
-				A7A0FBB820250F680055833B /* background.png in Resources */,
 				A7A0FB55201EED0A0055833B /* Assets.xcassets in Resources */,
 				A7A0FB53201EED0A0055833B /* Main.storyboard in Resources */,
 			);
@@ -431,8 +427,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UCN4WQ294T;
+				DEVELOPMENT_TEAM = 2BULHRS882;
 				INFOPLIST_FILE = SlotMachine/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ca.centennialcollege.SlotMachine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -446,8 +443,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UCN4WQ294T;
+				DEVELOPMENT_TEAM = 2BULHRS882;
 				INFOPLIST_FILE = SlotMachine/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ca.centennialcollege.SlotMachine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -464,6 +462,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UCN4WQ294T;
 				INFOPLIST_FILE = SlotMachineTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ca.centennialcollege.SlotMachineTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -481,6 +480,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UCN4WQ294T;
 				INFOPLIST_FILE = SlotMachineTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ca.centennialcollege.SlotMachineTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -497,6 +497,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UCN4WQ294T;
 				INFOPLIST_FILE = SlotMachineUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ca.centennialcollege.SlotMachineUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -513,6 +514,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UCN4WQ294T;
 				INFOPLIST_FILE = SlotMachineUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ca.centennialcollege.SlotMachineUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

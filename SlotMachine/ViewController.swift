@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  SlotMachine
 //
-//  Created by 包翎 on 2018/1/29.
-//  Copyright © 2018年 Centennial College. All rights reserved.
+//  Created by Sumit Ganju on 2018/1/29.
+//  Copyright © 2018 Centennial College. All rights reserved.
 //
 
 import UIKit
@@ -31,6 +31,8 @@ class ViewController: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+
         imageArray = ["🍎".emojiToImage()!,
                       "😍".emojiToImage()!,
                       "🐮".emojiToImage()!,
@@ -78,20 +80,20 @@ class ViewController: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSo
                 win = true
             }
     }
-        resultLabel.text = win ? "WINNER" : ""
+        resultLabel.text = win ? "WINNER!!!!" : ""
         if ownnedMoney == 0{
             resultLabel.text = "You Lose!"
         }
     }
     }
-    // returns the number of 'columns' to display.
+    // function which returns the number of 'columns' to display.
     @available(iOS 2.0, *)
     public func numberOfComponents(in pickerView: UIPickerView) -> Int{
         return	5
     }
     
     
-    // returns the # of rows in each component..
+    // function which returns the number of rows in each component..
     @available(iOS 2.0, *)
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
         return imageArray.count
